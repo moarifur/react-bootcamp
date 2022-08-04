@@ -5,11 +5,16 @@ class CounterCard extends Component {
     constructor(props){
         super(props);
         this.state={
-            show:false
+            show:false,
+            visibility:false
         }
     }
-    modalClose=()=>this.setState({show:false})
-    modalOpen=()=>this.setState({show:true})
+    modalClose1=()=>this.setState({show:false})
+    modalOpen1=()=>this.setState({show:true})
+
+    modalClose2=()=>this.setState({visibility:false})
+    modalOpen2=()=>this.setState({visibility:true})
+
 
     render() {
         return (
@@ -30,11 +35,11 @@ class CounterCard extends Component {
                             <em>Things we'll learn in this mini project.</em>
                         </h5>
 
-                        {/*-------------------- Modals Section ---------------------*/}
-                        <Button variant="warning" onClick={this.modalOpen}>
+                        {/*-------------------- Knowledge Base ---------------------*/}
+                        <Button variant="warning" onClick={this.modalOpen1}>
                             Click Here
                         </Button>
-                        <Modal size='lg' show={this.state.show} onHide={this.modalClose}>
+                        <Modal size='lg' show={this.state.show} onHide={this.modalClose1}>
                             <Modal.Body>
                                 <h4 className="text-black-50 font-weight-bold text-center pb-3">
                                     List of New Learned Things
@@ -67,19 +72,42 @@ class CounterCard extends Component {
                             </Modal.Body>
 
                             <Modal.Footer>
-                                <Button variant="secondary" onClick={this.modalClose}>
+                                <Button variant="secondary" onClick={this.modalClose1}>
                                     Close
                                 </Button>
                             </Modal.Footer>
                         </Modal>
                         <br/>
-                        <a href="#">Project Workflow</a>
+
+                        {/*--------------------- Workflow -----------------------*/}
+                        <a className='text-success' style={{cursor:"pointer"}} onClick={this.modalOpen2}>Project Workflow</a>
+
+                        <Modal size='xl' show={this.state.visibility} onHide={this.modalClose2}>
+                            <Modal.Body>
+                                <h4 className="text-black-50 font-weight-bold text-center pb-3">
+                                    Project Workflow
+                                </h4>
+                                <img
+                                    className="card-img-right flex-auto d-none d-lg-block"
+                                    style={{ width: 1100, height: 600 }}
+                                    src='images/counter.jpg'
+                                />
+                            </Modal.Body>
+
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={this.modalClose2}>
+                                    Close
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
                     </div>
+
                     <img
                         className="card-img-right flex-auto d-none d-lg-block"
                         style={{ width: 250, height: 250 }}
-                        src='images/counter.jpg'
+                        src='images/project01.jpg'
                     />
+
                 </div>
             </div>
         );

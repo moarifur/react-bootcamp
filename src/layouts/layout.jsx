@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CounterCard from "./cards/counterCard";
+import CounterCard from "./counterCard";
 
 class Layout extends Component {
     render() {

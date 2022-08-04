@@ -1,48 +1,40 @@
 import React, {Component} from 'react';
-import CounterCard from "../layouts/counterCard";
+import {Button, Modal} from "react-bootstrap";
 
 class Test extends Component {
+
+    constructor(props){
+        super(props);
+        this.state={
+            show:false
+        }
+    }
+    modalClose=()=>this.setState({show:false})
+    modalOpen=()=>this.setState({show:true})
+
     render() {
         return (
             <>
-                <div className="container">
-                    {/*------------ Header ----------------*/}
-                    <header className="blog-header py-3">
-                        <div className="col-12 text-center">
-                            <h1 className="text-black-50 font-weight-bold border-bottom pb-3">
-                                Welcome to the 'React Bootcamp'
-                            </h1>
-                        </div>
-                    </header>
+                <a className='text-success' style={{cursor:"pointer"}} onClick={this.modalOpen}>Project Workflow</a>
 
-                    {/*---------------- Jumbotron ---------------*/}
-                    <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-                        <div className="col-md-12">
-                            <h1 className="display-4 font-italic">
-                                React Bootcamp
-                            </h1>
-                            <p className="lead my-3">
-                                Learn the whole React library by doing so many small component based project
-                                and add them all up to build capstone project insha Allah!
-                            </p>
-                            <p className="lead mb-0">
-                                <a href="#" className="text-white font-weight-bold">
-                                    Table of content: Comming soon...
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+                <Modal size='xl' show={this.state.show} onHide={this.modalClose}>
+                    <Modal.Body>
+                        <h4 className="text-black-50 font-weight-bold text-center pb-3">
+                            Project Workflow
+                        </h4>
+                        <img
+                            className="card-img-right flex-auto d-none d-lg-block"
+                            style={{ width: 1100, height: 600 }}
+                            src='images/counter.jpg'
+                        />
+                    </Modal.Body>
 
-                    {/*------------ Projects ----------------*/}
-                    <div className="container">
-                        <div className="row mb-2">
-                            <CounterCard/> {/* Counter App*/}
-                            <CounterCard/> {/* Counter App*/}
-                            <CounterCard/> {/* Counter App*/}
-                            <CounterCard/> {/* Counter App*/}
-                        </div>
-                    </div>
-                </div>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={this.modalClose}>
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
             </>
         );
     }
