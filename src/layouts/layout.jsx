@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CounterCard from "./counterCard";
+import VidlyCard from "./vidlyCard";
 
 class Layout extends Component {
     render() {
@@ -36,10 +37,9 @@ class Layout extends Component {
                     {/*------------ Projects ----------------*/}
                     <div className="container">
                         <div className="row mb-2">
-                            <CounterCard/> {/* Counter App*/}
-                            <CounterCard/> {/* Counter App*/}
-                            <CounterCard/> {/* Counter App*/}
-                            <CounterCard/> {/* Counter App*/}
+                            <CounterCard/> {/* CounterV1 App*/}
+                            <VidlyCard/> {/* CounterV1 App*/}
+
                         </div>
                     </div>
                 </div>

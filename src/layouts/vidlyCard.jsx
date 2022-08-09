@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Modal} from "react-bootstrap";
-import Highlight from 'react-highlight-js'
 
-class CounterCard extends Component {
+class VidlyCard extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -34,9 +33,9 @@ class CounterCard extends Component {
                             <h4 className="mb-4">
                                 <a
                                     className="text-success"
-                                    href="https://33bl6i.csb.app/"
+                                    href="https://2d5nnt.csb.app/"
                                     target="_blank"
-                                >Project 01: CounterV1
+                                >Project 02: Vidly
                                 </a>
                             </h4>
                             <h5 className="card-text text-black-50 font-weight-bold mb-4">
@@ -123,6 +122,17 @@ class CounterCard extends Component {
                                             </td>
                                             <td>setState()</td>
                                         </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>lesson6.jsx</td>
+                                            <td>Passing Event Arguments</td>
+                                            <td>
+                                                <code className='text-black-50 font-weight-bold'>
+                                                    {"onClick={() => this.handleIncrement({id: 1})}"}
+                                                </code>
+                                            </td>
+                                            <td>Handle Function</td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </Modal.Body>
@@ -147,7 +157,7 @@ class CounterCard extends Component {
                                     <img
                                         className="card-img-right flex-auto d-none d-lg-block"
                                         style={{ width: 1100, height: 600 }}
-                                        src='images/counterV1.jpg'
+                                        src='images/vidly.jpg'
                                     />
                                 </Modal.Body>
 
@@ -163,7 +173,7 @@ class CounterCard extends Component {
                         <img
                             className="card-img-right flex-auto d-none d-lg-block"
                             style={ imageSize }
-                            src='images/project1.jpg'
+                            src='images/project2.jpg'
                         />
                     </>
                 </div>
@@ -172,5 +182,4 @@ class CounterCard extends Component {
     }
 }
 
-export default CounterCard;
-
+export default VidlyCard;
